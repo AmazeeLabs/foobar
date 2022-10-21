@@ -9,5 +9,8 @@ jobs:
     name: Test
     runs-on: ubuntu-20.04
     steps:
-      - name: setup
+      - name: Setup
         uses: ./.github/actions/setup
+
+      - name: Test
+        run: pnpm test
