@@ -17,10 +17,9 @@ jobs:
         with:
           node-version: 16
 
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup
         name: Install pnpm
         with:
-          version: 7
           run_install: false
 #
       - uses: actions/cache@v3
@@ -36,3 +35,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Build
+        run: pnpm test
