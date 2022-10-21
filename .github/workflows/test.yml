@@ -9,38 +9,5 @@ jobs:
     name: Test
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-
-      - uses: pnpm/action-setup@v2.2.4
-        name: Install pnpm
-        with:
-          version: 7
-          run_install: false
-#
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: /home/runner/.local/share/pnpm/store/v3
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm build
-
-      - name: Test
-        run: pnpm test
+      - name: setup
+        uses: ./.github/actions/setup
