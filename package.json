@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "postinstall": "husky install || true",
-    "build": "turbo build"
+    "build": "turbo build",
+    "test": "turbo test:integration"
   },
   "optionalDependencies": {
     "@commitlint/cli": "^17.1.2",
