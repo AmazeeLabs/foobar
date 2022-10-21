@@ -1,0 +1,14 @@
+schema: ../../graphql/schema.graphqls
+documents: ../../graphql/**/*.gql
+generates:
+  # Type definitions for schema types, operations and persisted operation ids.
+  build/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - '@amazeelabs/codegen-operation-ids'
+  # A map of operation id's to actual graphql operations to be used by a
+  # graphql server implementation.
+  build/map.json:
+    plugins:
+      - '@amazeelabs/codegen-operation-ids'
