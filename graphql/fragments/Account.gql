@@ -1,0 +1,5 @@
+fragment AccountInfo on Account {
+  id
+  name
+  roles
+}

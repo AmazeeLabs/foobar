@@ -1,0 +1,15 @@
+query AccountStatus {
+  currentAccount {
+    ...AccountInfo
+  }
+}
+
+mutation AccountLogin($name: String!, $pass: String!) {
+  login(name: $name, pass: $pass) {
+    ...AccountInfo
+  }
+}
+
+mutation AccountLogout {
+  logout
+}

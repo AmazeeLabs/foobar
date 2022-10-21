@@ -1,0 +1,21 @@
+type Query {
+  # Retrieve the currently logged in account.
+  currentAccount: Account
+}
+
+type Mutation {
+  # Log in with the given credentials.
+  login(name: String!, pass: String!): Account
+  # Log out the currently logged in account.
+  logout: Boolean
+}
+
+# An account that can log in to the system.
+type Account {
+  # The unique identifier of the account.
+  id: ID!
+  # The name of the account.
+  name: String!
+  # The user roles, associated with this account.
+  roles: [String!]!
+}
